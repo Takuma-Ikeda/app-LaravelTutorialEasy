@@ -5,10 +5,12 @@
 
 ## 開発環境
 
+- Laradoc
 - PHP 7.3.25-1+ubuntu18.04
     - Zend Engine v3.3.25
 - Laravel Framework 8.21.0
 - mysql Ver 8.0.16 for Linux on x86_64
+- Node.js v15.5.1
 
 # 回答
 
