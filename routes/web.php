@@ -18,20 +18,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-# 入力画面
+// 入力画面
 Route::get('insert/', [
     InsertDemoController::class,
     'index'
 ])->name('insert.index');
 
-# 確認画面
+// 確認画面
 Route::post('insert/confirm/', [
     InsertDemoController::class,
     'confirm'
 ])->name('insert.confirm');
 
-# 完了画面
+// 完了画面
 Route::post('insert/finish', [
     InsertDemoController::class,
     'finish'
 ])->name('insert.finish');
+
+Auth::routes();
+
+Route::get('/home', [
+    App\Http\Controllers\HomeController::class,
+    'index'
+])->name('home');
