@@ -29,9 +29,6 @@ composer require laravel/ui
 ＃ php artisan ui react --auth
 ```
 
-- `resources/js/app.js`
-- `resources/js/components/ExampleComponent.vue`
-
 ```sh
 php artisan migrate
 ```

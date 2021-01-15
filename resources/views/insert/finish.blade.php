@@ -7,6 +7,6 @@
     <div class="alert alert-success" role="alert">データベースにデータを挿入しました！</div>
 
     <div class="col-sm-offset-2 col-sm-10 text-center">
-        <a href="/insert" class="btn btn-primary btn-wide">TOPへ</a>
+        <a href="{{ route('insert.index') }}" class="btn btn-primary btn-wide">TOPへ</a>
     </div>
 @endsection

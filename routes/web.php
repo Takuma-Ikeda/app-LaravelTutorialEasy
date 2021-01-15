@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InsertDemoController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,10 @@ use App\Http\Controllers\InsertDemoController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+/**
+ * answer_01.md
+ */
 
 // 入力画面
 Route::get('insert/', [
@@ -36,9 +41,65 @@ Route::post('insert/finish', [
     'finish'
 ])->name('insert.finish');
 
+/**
+ * answer_02.md
+ */
+
 Auth::routes();
 
 Route::get('/home', [
-    App\Http\Controllers\HomeController::class,
+    HomeController::class,
     'index'
 ])->name('home');
+
+/**
+ * answer_05.md
+ */
+
+// Route::get('/student/list', [
+//     StudentController::class,
+//     'index'
+// ])->name('student.list');
+
+Route::group(['prefix' => 'student'], function () {
+    // 一覧
+    Route::get('list', [
+        StudentController::class,
+        'index'
+    ])->name('student.list');
+    // 新規: get
+    Route::get('new', [
+        StudentController::class,
+        'new_index'
+    ])->name('student.new_index');
+    // 新規確認: patch
+    Route::patch('new', [
+        StudentController::class,
+        'new_confirm'
+    ])->name('student.new_confirm');
+    // 新規完了: post
+    Route::post('new', [
+        StudentController::class,
+        'new_finish'
+    ])->name('student.new_finish');
+    // 編集: get
+    Route::get('edit/{id}/', [
+        StudentController::class,
+        'edit_index'
+    ])->name('student.edit_index');
+    // 編集確認: patch
+    Route::patch('edit/{id}/', [
+        StudentController::class,
+        'edit_confirm'
+    ])->name('student.edit_confirm');
+    // 編集完了: post
+    Route::post('edit/{id}/', [
+        StudentController::class,
+        'edit_finish'
+    ])->name('student.edit_finish');
+    // 削除: post
+    Route::post('delete/{id}/', [
+        StudentController::class,
+        'delete'
+    ])->name('student.delete');
+});

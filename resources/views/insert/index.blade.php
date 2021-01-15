@@ -12,7 +12,9 @@
             <label class="col-sm-2 control-label" for="username">名前：</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="username" name="username" placeholder="お名前を入力してください" value="{{ old('username') }}">
-                @if($errors->has('username'))<span class="text-danger">{{ $errors->first('username') }}</span> @endif
+                @if($errors->has('username'))
+                    <span class="text-danger">{{ $errors->first('username') }}</span>
+                @endif
             </div>
         </div>
 
@@ -20,7 +22,9 @@
             <label class="col-sm-2 control-label" for="mail">Email：</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="mail" name="mail" placeholder="Emailを入力してください" value="{{ old('mail') }}">
-                @if($errors->has('mail'))<span class="text-danger">{{ $errors->first('mail') }}</span> @endif
+                @if($errors->has('mail'))
+                    <span class="text-danger">{{ $errors->first('mail') }}</span>
+                @endif
             </div>
         </div>
 
@@ -29,7 +33,11 @@
             <div class="col-sm-2">
                 <input type="text" class="form-control" id="age" name="age" placeholder="年齢" value="{{ old('age') }}">
             </div>
-            <div class="col-sm-8">歳 @if($errors->has('age'))<span class="text-danger">{{ $errors->first('age') }}</span> @endif</div>
+            <div class="col-sm-8">歳
+                @if($errors->has('age'))
+                    <span class="text-danger">{{ $errors->first('age') }}</span>
+                @endif
+            </div>
         </div>
 
         <div class="form-group">

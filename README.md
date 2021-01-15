@@ -24,6 +24,10 @@
 
 [基本機能の使い方](./answer_01.md)
 
+## CRUDアプリの作成（ver5）
+
+[CRUDアプリの作成（ver5）](./answer_05.md)
+
 ## 認証機能の作成 ( make:auth )
 
 [認証機能の作成 ( make:auth )](./answer_02.md)
@@ -31,15 +35,3 @@
 ## セッション
 
 [セッション](./answer_03.md)
-
-## ベーシック認証
-
-[ベーシック認証](./answer_04.md)
-
-## CRUDアプリの作成（ver5）
-
-[CRUDアプリの作成（ver5）](./answer_05.md)
-
-## CRUDアプリの作成（ver6）
-
-[CRUDアプリの作成（ver6）](./answer_06.md)
