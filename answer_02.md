@@ -53,6 +53,8 @@ npm run dev
 npm run production
 ```
 
+これを実行しないと Vue ファイルが CSS/JS ファイルとして生成されないので注意
+
 ### 動作確認
 
 - http://localhost/
@@ -123,6 +125,11 @@ email_verified_at: NULL
 
 ### 各画面の確認
 
+```sh
+# コンパイル
+npm run dev
+```
+
 - ルーティングを確認する
 
 ```sh
@@ -159,23 +166,92 @@ php artisan route:list
 
 ## Laravel6にメール設定（MailGun編）
 
+- メールサーバを自前で用意するのは大変なので、開発ではメール API サービスを利用することが多い
+    - https://mailtrap.io/
+    - https://www.mailgun.com/
+        - Laravel で公式サポートされているのが mailgun
+        - https://laravel.com/docs/8.x/mail
+
 ### MailGunのアカウントを作成
 
+- https://www.mailgun.com/
+    - ダッシュボード画面から「Sending」>「Domains」をクリック
+    - 「Authorized Recipients」の「Email address」に受信するメールアドレスを入力して「Save Recipient」を押す
+    - 入力したメールアドレス宛に「Would you like to receive emails from sankosc on Mailgun?」というタイトルのメールが届く
+    - 「I Agree 」を押す
+    - Confirm画面が表示されるので「Yes」を押す
+- https://qiita.com/masuda-sankosc/items/68876ac7fa992746477d
 
+### Guzzle HTTPライブラリを入れる
 
-#### Guzzle HTTPライブラリを入れる
+- 素の PHP でも HTTP リクエストを行うことはできるが、 Guzzle というライブラリを使うほうがシンプルにコードを書くことができる。
+- mailgun の利用において Gullze は必須になっている
 
-
+```sh
+# workspace コンテナで以下コマンド
+composer require guzzlehttp/guzzle
+```
 
 ### .envにMailGunを設定
 
+- mailgun > sending > oveerview の `API` と `SMTP` を参照すること
 
+```
+MAIL_DRIVER=mailgun
+MAIL_HOST=smtp.mailgun.org
+MAIL_PORT=587
+MAIL_USERNAME=SMTPのUserNameを参照
+MAIL_PASSWORD=SMTPのDefault Passwordを参照
+MAIL_ENCRYPTION=tls
+MAILGUN_DOMAIN=Overviewを参照
+MAILGUN_SECRET=APIのAPI Keyを参照
+MAIL_FROM_ADDRESS=実在するメールアドレスならなんでもよい
+```
+
+`.env` ファイルを変更したら、以下コマンドを必ず実行すること
+
+```sh
+php artisan config:cache
+```
+
+#### メール送信テスト
+
+```sh
+# テスト用のメールファイル作成
+php artisan make:mail MailgunTest
+```
+
+- `app/Mail/MailgunTest.php`
+- `resources/views/mails/mail.blade.php`
+
+```sh
+# tinker を使って、Laravel のプログラムを手動で実行する
+php artisan tinker
+
+# '送信先アドレス' は mailgun のダッシュボードから承認したメールアドレスに書き換えること
+\Mail::to('送信先アドレス')->send(new App\Mail\MailgunTest());
+```
 
 ### 動作確認
 
-
+- http://localhost/password/reset
+    - mailgun のダッシュボードから承認したメールアドレスであれば、パスワードリセットメールが届くようになる
 
 ## ログイン認証機能の日本語化（laravel6）
+
+### Laravelプロジェクト自体の日本語設定
+
+- `config/app.php`
+
+### アプリの名前を日本語
+
+- `.env`
+
+### 画面上のテキストを日本語化
+
+- `resources/lang/ja.json`
+
+### その他の文言を日本語化
 
 ### Laravelプロジェクト自体の日本語設定
 

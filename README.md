@@ -17,6 +17,9 @@
 - Laravel 8 系公式ドキュメント
     - https://readouble.com/laravel/8.x/ja/installation.html
     - https://readouble.com/laravel/8.x/en/installation.html
+- 命名規則について
+    - https://laraweb.net/knowledge/942/
+    - https://qiita.com/gone0021/items/e248c8b0ed3a9e6dbdee
 
 # 回答
 
@@ -24,14 +27,14 @@
 
 [基本機能の使い方](./answer_01.md)
 
-## CRUDアプリの作成（ver5）
-
-[CRUDアプリの作成（ver5）](./answer_05.md)
-
 ## 認証機能の作成 ( make:auth )
 
 [認証機能の作成 ( make:auth )](./answer_02.md)
 
+## CRUDアプリの作成（ver5）
+
+[CRUDアプリの作成（ver5）](./answer_03.md)
+
 ## セッション
 
-[セッション](./answer_03.md)
+[セッション](./answer_04.md)

@@ -1,11 +1,5 @@
 # 基本機能の使い方
 
-- 命名規則について
-    - https://laraweb.net/knowledge/942/
-    - https://qiita.com/gone0021/items/e248c8b0ed3a9e6dbdee
-
----
-
 ## 入力フォームからDBに挿入の流れ
 
 ### フォーム（入力画面から確認画面）の作成
