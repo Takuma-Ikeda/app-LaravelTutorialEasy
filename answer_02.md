@@ -22,6 +22,8 @@ composer require laravel/ui
     - 認証機能 (ログイン) の View ファイル作成
 
 ```sh
+docker-compose exec workspace bash
+
 # Vueで実装する場合
 ＃ php artisan ui vue --auth
 
@@ -53,7 +55,7 @@ npm run dev
 npm run production
 ```
 
-これを実行しないと Vue ファイルが CSS/JS ファイルとして生成されないので注意
+これを実行しないと Vue ファイルが CSS/JS ファイルとして生成されません。
 
 ### 動作確認
 
@@ -65,6 +67,7 @@ npm run production
 ### シーダーファイル（スケルトン）の作成
 
 ```sh
+# UsersTableSeeder.php の作成
 php artisan make:seeder UsersTableSeeder
 ```
 
@@ -188,7 +191,8 @@ php artisan route:list
 - mailgun の利用において Gullze は必須になっている
 
 ```sh
-# workspace コンテナで以下コマンド
+docker-compose exec workspace bash
+
 composer require guzzlehttp/guzzle
 ```
 
@@ -253,19 +257,7 @@ php artisan tinker
 
 ### その他の文言を日本語化
 
-### Laravelプロジェクト自体の日本語設定
-
-
-
-### アプリの名前を日本語
-
-
-
-### 画面上のテキストを日本語化
-
-
-
-### その他の文言を日本語化
-
-
-
+- `resources/lang/ja/auth.php`
+- `resources/lang/ja/pagination.php`
+- `resources/lang/ja/passwords.php`
+- `resources/lang/ja/validation.php`

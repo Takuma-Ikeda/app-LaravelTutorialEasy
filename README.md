@@ -5,12 +5,16 @@
 
 ## 開発環境
 
-- Laradoc
+- Laradock
 - PHP 7.3.25-1+ubuntu18.04
     - Zend Engine v3.3.25
 - Laravel Framework 8.21.0
 - mysql Ver 8.0.16 for Linux on x86_64
 - Node.js v15.5.1
+
+### laradock 環境構築方法
+
+- https://www.dropbox.com/scl/fi/2boute0ele9dt55xzzkrk/20210113_.paper?dl=0&rlkey=11ml1k0r4dn8r32y6f7g082ga
 
 ### 参考
 
@@ -23,18 +27,21 @@
 
 # 回答
 
+- 問題ページ
+    - https://laraweb.net/crud/elementary/
+
 ## 基本機能の使い方
 
-[基本機能の使い方](./answer_01.md)
+- [手順](./answer_01.md)
 
 ## 認証機能の作成 ( make:auth )
 
-[認証機能の作成 ( make:auth )](./answer_02.md)
+- [手順](./answer_02.md)
 
 ## CRUDアプリの作成（ver5）
 
-[CRUDアプリの作成（ver5）](./answer_03.md)
+- [手順](./answer_03.md)
 
 ## セッション
 
-[セッション](./answer_04.md)
+- [手順](./answer_04.md)

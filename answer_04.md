@@ -19,4 +19,3 @@ php artisan make:controller PracticeSessionController
 
 - `resources/views/session/practice.blade.php`
 - http://localhost/session/index
-
