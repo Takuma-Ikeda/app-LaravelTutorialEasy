@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InsertDemoController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PracticeSessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,7 +55,7 @@ Route::get('/home', [
 ])->name('home');
 
 /**
- * answer_05.md
+ * answer_03.md
  */
 
 // Route::get('/student/list', [
@@ -103,4 +104,20 @@ Route::group(['prefix' => 'student'], function () {
         StudentController::class,
         'delete'
     ])->name('student.delete');
+});
+
+/**
+ * answer_04.md
+ */
+
+Route::group(['prefix' => 'session'], function () {
+    Route::get('index', [
+        PracticeSessionController::class,
+        'index'
+    ])->name('session.index');
+
+    Route::get('reset', [
+        PracticeSessionController::class,
+        'reset'
+    ])->name('session.reset');
 });
