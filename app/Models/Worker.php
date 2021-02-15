@@ -14,4 +14,7 @@ class Worker extends Model
      * ここにあるカラムのみ create() / fill() / update() などで値を代入することが許可される
      */
     protected $fillable = ['username', 'mail', 'age'];
+
+    // 更新されたくないカラムは $guarded に定義する
+    protected $guarded = [];
 }

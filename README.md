@@ -24,6 +24,8 @@
 - 命名規則について
     - https://laraweb.net/knowledge/942/
     - https://qiita.com/gone0021/items/e248c8b0ed3a9e6dbdee
+- マイグレーションについて
+    - https://qiita.com/rope19181/items/c7862f9a0a22443ddb48
 
 # 回答
 
@@ -45,3 +47,7 @@
 ## セッション
 
 - [手順](./answer_04.md)
+
+## API をつくってみよう 
+
+- [番外編](./answer_05.md)
