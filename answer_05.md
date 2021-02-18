@@ -78,6 +78,28 @@ tail -f storage/logs/laravel.log
     - GET アクセスで show メソッドの引数 `$id` に 1 が渡される
 - ブラウザでは文字化けすることが多い
 
+### ErrorExceptionflock() expects parameter 1 to be resource, bool given
+
+```sh
+chmod -R 755 storage
+chmod -R 755 bootstrap/cache
+cd storage
+mkdir -pv framework/views app framework/sessions framework/cache
+cd ..
+chmod 777 -R storage
+chown -R www-data:www-data storage
+```
+
+```sh
+php artisan cache:clear
+php artisan config:clear
+php artisan route:clear
+php artisan view:clear
+```
+
+- Laravel Permission 参考
+	- https://www.tutsmake.com/laravel-8-how-to-set-up-file-permissions/
+
 ### Google Chrome で API 連携を確認する
 
 1. 開発者ツール
