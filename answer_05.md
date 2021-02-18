@@ -81,13 +81,9 @@ tail -f storage/logs/laravel.log
 ### ErrorExceptionflock() expects parameter 1 to be resource, bool given
 
 ```sh
-chmod -R 755 storage
-chmod -R 755 bootstrap/cache
-cd storage
-mkdir -pv framework/views app framework/sessions framework/cache
-cd ..
-chmod 777 -R storage
-chown -R www-data:www-data storage
+chmod -R 777 storage
+chmod -R 777 storage/logs
+chmod -R 777 bootstrap/cache
 ```
 
 ```sh
