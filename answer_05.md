@@ -8,8 +8,20 @@
         - だいたい必要な CRUD 系ルーティングをすべて生成してくれる
         - `Route::resource` は `web.php` でも利用可能
 
+## コントローラ
+
 ```sh
-# ルーティングの確認
+# Route::resource に必要なメソッドが定義されたテンプレートになる
+php artisan make:controller API/StudentController --resource
+```
+
+- `app/Http/Controllers/API/StudentController.php`
+    - 今回は show メソッドだけ実装した
+
+### 生成されるルーティングの確認
+
+```sh
+# ルーティング確認
  php artisan route:list
 ```
 
@@ -43,16 +55,6 @@
 	- api/student/{student}/edit
 	- student.edit
 	- App\Http\Controllers\StudentController@edit
-
-## コントローラ
-
-```sh
-# Route::resource に必要なメソッドが定義されたテンプレートになる
-php artisan make:controller API/StudentController --resource
-```
-
-- `app/Http/Controllers/API/StudentController.php`
-    - 今回は show メソッドだけ実装した
 
 ### ログ出力
 
